@@ -20,40 +20,55 @@ const ctx = canvas.getContext('2d');
 
 let drawing = false;
 
+function getPosition(e) {
+    const rect = canvas.getBoundingClientRect();
+    if (e.touches) {
+        // タッチイベントの場合
+        return {
+            x: e.touches[0].clientX - rect.left,
+            y: e.touches[0].clientY - rect.top
+        };
+    } else {
+        // マウスイベントの場合
+        return {
+            x: e.clientX - rect.left,
+            y: e.clientY - rect.top
+        };
+    }
+}
+
 function startPosition(e) {
     drawing = true;
-    draw(e); // Begin the drawing path
+    const pos = getPosition(e);
+    ctx.moveTo(pos.x, pos.y);
+    ctx.beginPath();
 }
 
 function endPosition() {
     drawing = false;
-    ctx.beginPath(); // Begin a new path to avoid connecting lines
 }
 
 function draw(e) {
-    if (!drawing) return; // Only draw when the mouse is pressed
+    if (!drawing) return;
+    const pos = getPosition(e);
+    ctx.lineTo(pos.x, pos.y);
     ctx.lineWidth = 3;
     ctx.lineCap = 'round';
     ctx.strokeStyle = 'black';
-
-    const rect = canvas.getBoundingClientRect();
-    const x = e.clientX - rect.left;
-    const y = e.clientY - rect.top;
-
-    ctx.lineTo(x, y);
     ctx.stroke();
-    ctx.beginPath();
-    ctx.moveTo(x, y);
 }
 
 canvas.addEventListener('mousedown', startPosition);
 canvas.addEventListener('mouseup', endPosition);
 canvas.addEventListener('mousemove', draw);
+canvas.addEventListener('touchstart', startPosition);
+canvas.addEventListener('touchend', endPosition);
+canvas.addEventListener('touchmove', draw);
 
 document.getElementById('saveBtn').addEventListener('click', function() {
-  const dataURL = canvas.toDataURL('image/png');
-  const link = document.createElement('a');
-  link.href = dataURL;
-  link.download = 'whiteboard.png'; // Set the file name for the download
-  link.click();
+    const dataURL = canvas.toDataURL('image/png');
+    const link = document.createElement('a');
+    link.href = dataURL;
+    link.download = 'whiteboard.png';
+    link.click();
 });
