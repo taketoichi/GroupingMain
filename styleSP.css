@@ -1,0 +1,250 @@
+* {  
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  justify-content: center; /* 水平方向の中央配置 */
+  align-items: center; /* 垂直方向の中央配置 */
+}
+
+header, footer {
+  background-color: #f1f1f1;
+  padding: 10px;
+  text-align: center;
+}
+
+section {
+  text-align: center;
+  margin: 20px;
+}
+
+footer {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #f1f1f1;
+  padding: 10px;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: rgb(248, 208, 215); /* or any color you prefer */
+  z-index: 99;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* optional for a slight shadow under the header */
+}
+
+body {
+  padding-top: 80px; /* Adjust this value based on the height of your header */
+}
+
+:target {
+  padding-top: 80px;    /* ヘッダーの高さに合わせて設定 */
+  margin-top: -80px;    /* パディング分を相殺 */
+}
+
+header {
+  height: 80px; 
+  display: flex;
+  justify-content: space-between;/* This will space out the items evenly */
+  align-items: center;
+  padding-left: -10px;
+  font-size: 120%;
+  flex-basis: 20%;
+}
+
+
+.sakura-color {
+  color: #fa4f7d; /* Replace with the exact sakura color you want */
+}
+
+
+header nav ul {
+  list-style: none; /* Removes the default list styling */
+  padding: 0;
+  margin: 0;
+  display: flex;
+}
+
+header nav ul li {
+  margin: 0 10px; /* Adjusts spacing between items */
+  
+}
+
+.infomation {
+  display: flex;
+  justify-content: space-around; /* This will space out the items evenly */
+  align-items: center;
+}
+
+.pricing {
+  color: rgb(245, 83, 105);
+  font-size: 30px;
+}
+
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 2rem;
+  width: 100%; /* Full width on small screens */
+}
+
+@media (min-width: 768px) {
+  img {
+      width: 80%; /* Adjust width for larger screens */
+  }
+}
+
+@media (min-width: 1024px) {
+  header nav {
+      justify-content: start; /* Aligns nav items to the left on larger screens */
+  }
+
+  header nav ul li {
+      margin-right: 30px; /* Larger spacing between nav items */
+  }
+}
+
+@keyframes slideInFromTop {
+  0% {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.slide-in-top {
+  animation: slideInFromTop 1s ease-out forwards;
+  opacity: 0; /* Start invisible */
+}
+
+.fade-out {
+  opacity: 0;
+}
+
+.logo-area {
+  flex-basis: 10%; /* Adjust if necessary */
+  display: flex;
+  align-items: auto;
+}
+
+.logo {
+  max-width: 50%; /* Adjust to fit within logo-area */
+  max-height: 50%; /* Maintains aspect ratio */
+  height: auto;
+  margin-right: -10px; /* Adds some space between the logo and the title */
+  margin-bottom: -1px;
+animation: none;
+opacity: 100;
+  position: relative; /* This ensures the logo is positioned relative to its normal position */
+  z-index: 100;
+}
+
+.header-content {
+  display: flex;
+  align-items: center; /* Vertically centers the logo with the title */
+}
+
+.fade-in-section {
+  font-size: 130%;
+}
+
+.introduction {
+  text-align: left;
+}
+
+#whiteboard {
+  border: 5px solid black;
+  position: relative; /* or 'absolute' depending on your layout */
+  z-index: 10; /* Ensure it's above other elements */
+  width: 100%;
+  height: auto; /* 縦横比を保つために auto を指定 */
+  max-width: 1200px; /* 最大幅を設定 */
+  border: 5px solid black;
+}
+
+@media screen and (max-width: 768px) {
+  #whiteboard {
+      width: 100%; /* タブレットの画面幅に合わせる */
+      max-width: 600px; /* タブレットの最大幅 */
+  }
+}
+
+@media screen and (max-width: 480px) {
+  #whiteboard {
+      width: 100%; /* モバイルの画面幅に合わせる */
+      max-width: 300px; /* モバイルの最大幅 */
+  }
+}
+
+.scrollable-table {
+  overflow-x: auto; /* Enables horizontal scrolling */
+ color: rgb(206, 202, 202);
+}
+
+.scrollable-table table {
+  width: 60%; /* Full width */
+  border-collapse: collapse; /* For styling */
+
+}
+
+.scrollable-table th, .scrollable-table td {
+  background-color: white;
+  padding: 8px; /* Padding for table cells */
+  text-align: left; /* Align text to the left */
+  border-bottom: 1.5px solid #757373; /* For styling */
+}
+
+@media screen and (max-width: 768px) {
+  .scrollable-table table {
+      width: 150%; /* Larger width for smaller screens to enable scrolling */
+  }
+}
+
+.scrollable-table th, .scrollable-table td {
+  text-align: center; /* テーブルの中のテキストを中央揃えにする */
+}
+
+.fade-in-section h2 {
+  color: rgb(26, 42, 109);
+  font-size:45px;
+}
+
+.scrollable-table, .form-container {
+  display: flex;
+  justify-content: center; /* 水平方向の中央配置 */
+  width: 100%; /* コンテナーの幅を指定 */
+}
+
+.scrollable-table table, .form-container iframe {
+  margin: auto; /* 自動マージンで要素を中央に配置 */
+}
+
+.form-container {
+  width: 100%; /* Take the full width of its parent */
+  padding: 15px; /* Optional padding */
+}
+
+.form-container iframe {
+  width: 65%; /* Width of the iframe is 80% of its parent */
+  border: none; /* Remove border */
+  /* You can adjust the max-width and min-width as needed */
+}
+
+@media screen and (max-width: 768px) {
+  .form-container iframe {
+      width: 60%; /* For smaller screens, you might want to increase the width */
+  }
+}
+
+.fade-in-section h3 {
+  color: rgb(26, 42, 109);
+  font-size:30px;
+}
