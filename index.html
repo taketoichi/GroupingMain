@@ -28,24 +28,205 @@
           <p class="introduction">学習活動への意欲から自動でグルーピングを行うことで，より活性化した協働的なグループワークを実現させます。<br>
              問題解決学習や，行事の際のグルーピングで最大の効果を発揮します。</p>
           <div class="infomation">
-            <img src="slide1.JPG" class="mobile" />
+            <img src="images\スライド1.JPG" class="mobile" />
       </section>
 
       <section id="features" class="section">
           <h2>アプリの特徴
           </h2>
             <div class="infomation2">
-              <img src="slide2.JPG" class="mobile" />
+              <img src="images\スライド2.JPG" class="mobile" />
               <div class="infomation3">
-                <img src="slide3.JPG" class="mobile" />
+                <img src="images\スライド3.JPG" class="mobile" />
                 <div class="infomation4">
-                  <img src="slide4.JPG" class="mobile" />
+                  <img src="images\スライド4.JPG" class="mobile" />
       </section>
   
       <section id="how-to-use">
-          <h2>使用方法</h2>
-          <canvas id="whiteboard" width="1200" height="600"></canvas>
-          <button id="saveBtn">画像として保存</button>
+        <h2>使用方法</h2>
+        <h3>１，実施前準備</h3>
+        <div id="cards">
+          <div class="card" >
+            <div class="picture"><img src="images\スライド5.JPG" alt="" onclick="showPopup('popup1')"/></div>
+            <div class="description">
+              <a>①児童・生徒の登録<br>（CSV登録）</a>
+              <p>・ログイン後，児童生徒の名前を登録します</p>
+              <p>・Excelなどの表から，クラス全員分，学校全員分など，<br>　一括して登録可能</p>
+            </div>
+          </div>
+          <div class="card" >
+            <div class="picture"><img src="images\スライド6.JPG" alt="" onclick="showPopup('popup2')"/></div>
+            <div class="description">
+              <a>②ルームの作成<br>（ルーム名・メモの入力）</a>
+              <p>・画面右上”ルーム”をクリック</p>
+              <p>・新規でルームを作成する場合，”＋”マークをクリック</p>
+              <p>・ルーム名（授業を実施するメンバーの名前：〇年〇組など）と，<br>　メモ・備考（省略可）を入力</p>
+            </div>
+          </div>
+          <div class="card" >
+            <div class="picture"><img src="images\スライド7.JPG" alt="" onclick="showPopup('popup3')"/></div>
+            <div class="description">
+              <a>③ルームの設定<br>（児童・生徒の選択）</a>
+              <p>・表の左側”編集マーク✐”をクリック</p>
+              <p>・ルーム内で授業を実施する児童生徒を選択し，<br>　適応済みに反映させる</p>
+              <p>・実施するメンバーが変わる場合は，新たに別のルームを作成する</p>
+            </div>
+          </div>
+          <div class="card" >
+            <div class="picture"><img src="images\スライド8.JPG" alt="" onclick="showPopup('popup4')"/></div>
+            <div class="description">
+              <a>④プロジェクトの設定・開始<br>（1回分の授業を作成）</a>
+              <p>・新規でプロジェクトを作成する場合，”＋”マークをクリック</p>
+              <p>・プロジェクト（１回分の授業）の必要事項を入力する</p>
+              <p>・プロジェクトを立ち上げたら，表右側の”開始”をクリック</p>
+            </div>
+          </div>
+          
+        </div>
+
+        <h3>２，プロジェクト（1回分の授業）の流れ</h3>
+        <div id="cards2">
+          <div class="card" >
+            <div class="picture"><img src="images\スライド9.JPG" alt="" onclick="showPopup('popup5')"/></div>
+            <div class="description">
+              <a>①児童・生徒ログイン<br>
+                （自動でアンケート開始）</a>
+                <p>・プロジェクト画面上部のQRコードの読み込み，もしくは<br>　プロジェクトキーを入力することで児童・生徒をルームへ<br>　招待する</p>
+                <p>・登録したメンバーの中から，児童・生徒自身の名前を選択する</p>
+                <p>・表示された児童・生徒用のアンケートに回答する</p>
+                <p><a href="https://ed-chao.vercel.app/Grouping/enter" target="_blank">※児童・生徒用画面</a></p>
+            </div>
+          </div>
+          <div class="card" >
+            <div class="picture"><img src="images\スライド10.JPG" alt="" onclick="showPopup('popup6')"/></div>
+            <div class="description">
+              <a>②欠席者チェック<br>（チェックを外す）</a>
+              <p>・画面右側の名簿を確認し，授業当日に欠席者がいた場合は<br>　チェックを外す</p>
+              <p>※チェックを外さない場合，回答が”０”としてグループに<br>　割り振られる</p>
+            </div>
+          </div>
+          <div class="card" >
+            <div class="picture"><img src="images\スライド11.JPG" alt="" onclick="showPopup('popup7')"/></div>
+            <div class="description">
+              <a>③グループの班数（人数）の設定</a><br>　
+              <p>・グループを生成する前に，グループの班数または，人数を<br>　指定します</p>
+              <p>※人数によって，設定人数（班数）が増減する場合があります</p>
+            </div>
+          </div>
+          <div class="card" >
+            <div class="picture"><img src="images\スライド12.JPG" alt="" onclick="showPopup('popup8')"/></div>
+            <div class="description">
+              <a>④アンケート終了／グループ生成</a><br>　
+              <p>・画面上部の”アンケート終了”をクリック</p>
+              <p>・回答結果を基に，グループが提案される</p>
+              <p>・人数や班数を確認し，よければ”グループ作成”をクリック</p>
+              <p>※任意で名前をつける</p>
+            </div>
+          </div>
+        </div>
+        
+        <h3>３，プロジェクトの振り返り</h3>
+        <div id="cards3">
+          <div class="card" >
+            <div class="picture"><img src="images\スライド13.JPG" alt="" onclick="showPopup('popup9')"/></div>
+            <div class="description">
+              <a>①各グループメンバーと役割の確認<br>（チャート表示）<br></a>
+              <p>・各グループのメンバーや，役割を確認</p>
+              <p>・ページ上部の”チャートボタン”をクリックで，各メンバーの結果を<br>　確認</p>
+            </div>
+          </div>
+          <div class="card" >
+            <div class="picture"><img src="images\スライド14.JPG" alt="" onclick="showPopup('popup10')"/></div>
+            <div class="description">
+              <a>②まとめアンケート実施</a><br>　
+              <p>・ページ上部の”まとめ”をクリック</p>
+              <p>・児童・生徒画面で自動でアンケート画面が表示</p>
+            </div>
+          </div>
+          <div class="card" >
+            <div class="picture"><img src="images\スライド15.JPG" alt="" onclick="showPopup('popup11')"/></div>
+            <div class="description">
+              <a>③まとめアンケート終了＆表彰</a><br>　
+              <p>・ページ上部の”まとめ終了＆表彰”をクリック</p>
+              <p>・表彰画面（Top3）が表示される</p>
+              <p>・個人毎，グループ毎で表彰結果を確認</p>
+              <p>◎授業の振り返りやグループワークの振り返りに活用</p>
+            </div>
+          </div>
+          <div class="card" >
+            <div class="picture"><img src="images\スライド16.JPG" alt="" onclick="showPopup('popup12')"/></div>
+            <div class="description">
+              <a>④グループ保存</a><br>　
+              <p>・必要であれば，今回振り分けたグループをお気に入り登録する</p>
+              <p>・ページ上部の”グループ設定”をクリック</p>
+              <p>・作成されたグループの表左側の”☆”をクリック</p>
+              <p>・表右側の保存されたグループに表示されれば完了<br>　ルーム内（同一メンバー）のプロジェクトで再利用可能</p>
+            </div>
+          </div>
+        </div>
+          <!-- <canvas id="whiteboard" width="1200" height="600"></canvas>
+          <button id="saveBtn">画像として保存</button>-->
+          
+          <div id="popup1" class="popup" onclick="hidePopup('popup1')">
+            <div class="popup-content">
+              <img src="images/スライド5.JPG" alt="" class="popup-image">
+            </div>
+          </div>
+          <div id="popup2" class="popup" onclick="hidePopup('popup2')">
+            <div class="popup-content">
+              <img src="images/スライド6.JPG" alt="" class="popup-image">
+            </div>
+          </div>
+          <div id="popup3" class="popup" onclick="hidePopup('popup3')">
+            <div class="popup-content">
+              <img src="images/スライド7.JPG" alt="" class="popup-image">
+            </div>
+          </div>
+          <div id="popup4" class="popup" onclick="hidePopup('popup4')">
+            <div class="popup-content">
+              <img src="images/スライド8.JPG" alt="" class="popup-image">
+            </div>
+          </div>
+          <div id="popup5" class="popup" onclick="hidePopup('popup5')">
+            <div class="popup-content">
+              <img src="images/スライド9.JPG" alt="" class="popup-image">
+            </div>
+          </div>
+          <div id="popup6" class="popup" onclick="hidePopup('popup6')">
+            <div class="popup-content">
+              <img src="images/スライド10.JPG" alt="" class="popup-image">
+            </div>
+          </div>
+          <div id="popup7" class="popup" onclick="hidePopup('popup7')">
+            <div class="popup-content">
+              <img src="images/スライド11.JPG" alt="" class="popup-image">
+            </div>
+          </div>
+          <div id="popup8" class="popup" onclick="hidePopup('popup8')">
+            <div class="popup-content">
+              <img src="images/スライド12.JPG" alt="" class="popup-image">
+            </div>
+          </div>
+          <div id="popup9" class="popup" onclick="hidePopup('popup9')">
+            <div class="popup-content">
+              <img src="images/スライド13.JPG" alt="" class="popup-image">
+            </div>
+          </div>
+          <div id="popup10" class="popup" onclick="hidePopup('popup10')">
+            <div class="popup-content">
+              <img src="images/スライド14.JPG" alt="" class="popup-image">
+            </div>
+          </div>
+          <div id="popup11" class="popup" onclick="hidePopup('popup11')">
+            <div class="popup-content">
+              <img src="images/スライド15.JPG" alt="" class="popup-image">
+            </div>
+          </div>
+          <div id="popup12" class="popup" onclick="hidePopup('popup12')">
+            <div class="popup-content">
+              <img src="images/スライド16.JPG" alt="" class="popup-image">
+            </div>
+          </div>
       </section>
   
       <section id="pricing">
