@@ -112,7 +112,7 @@ img {
 @keyframes slideInFromTop {
   0% {
     opacity: 0;
-    transform: translateY(-50px);
+    transform: translateY(50px);
   }
   100% {
     opacity: 1;
@@ -159,30 +159,30 @@ opacity: 100;
 .introduction {
   text-align: left;
 }
-
-#whiteboard {
+/* #whiteboard {
   border: 5px solid black;
-  position: relative; /* or 'absolute' depending on your layout */
-  z-index: 10; /* Ensure it's above other elements */
+  position: relative; /* or 'absolute' depending on your layout 
+  z-index: 10; /* Ensure it's above other elements
   width: 100%;
-  height: auto; /* 縦横比を保つために auto を指定 */
-  max-width: 1200px; /* 最大幅を設定 */
-  border: 5px solid black;
-}
+  height: auto; /* 縦横比を保つために auto を指定 
+  max-width: 1200px; /* 最大幅を設定 
+  border: 5px solid black; 
+} /*
 
 @media screen and (max-width: 768px) {
   #whiteboard {
-      width: 100%; /* タブレットの画面幅に合わせる */
-      max-width: 600px; /* タブレットの最大幅 */
+      width: 100%; /* タブレットの画面幅に合わせる 
+      max-width: 600px; /* タブレットの最大幅 
   }
 }
 
 @media screen and (max-width: 480px) {
   #whiteboard {
-      width: 100%; /* モバイルの画面幅に合わせる */
-      max-width: 300px; /* モバイルの最大幅 */
+      width: 100%; /* モバイルの画面幅に合わせる 
+      max-width: 300px; /* モバイルの最大幅 
   }
-}
+} */
+
 
 .scrollable-table {
   overflow-x: auto; /* Enables horizontal scrolling */
@@ -248,3 +248,105 @@ opacity: 100;
   color: rgb(26, 42, 109);
   font-size:30px;
 }
+
+
+.picture img {
+  width: 100%;
+  height: auto;
+  animation: none;
+  opacity: 100;
+}
+
+.description {
+  width: 100%;
+  height: 145px;
+  padding-right: 12px;
+  padding-left: 12px;
+  box-sizing: border-box;
+  overflow: auto; /* 必要に応じてスクロールバーを表示 */
+  max-height: 200px; /* 最大高さを設定 */
+}
+
+.description p {
+  font-size: 13px;
+  color: dimgray;
+}
+
+#cards, #cards2, #cards3 {
+  display: flex;
+  overflow-x: auto;    
+  margin-bottom: 5rem; /* '次のステップ' の見出しまでのスペース */
+  margin-left: 0;
+  padding-left: 0;
+  flex-wrap: nowrap; /* カードが折り返さないように */
+  width: 100%;
+  justify-content: flex-start; /* 左寄せ */
+}
+
+.card:first-child {
+  margin-left: 10px; /* 適切な値に調整 */
+}
+
+.card {
+  flex-shrink: 0;
+  flex: 0 0 auto; /* カードが縮小せず、指定された幅を保持する */
+  width: 430px; /* 各カードの幅を設定 */
+  height: auto;
+  border: 1px solid lightgray;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  margin-right: 10px;
+  margin-left: 10px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* 影の設定 */
+}
+
+#how-to-use {
+  display: flex;
+  flex-direction: column; /* 要素を縦に並べる */
+  align-items: center; /* 水平方向の中央寄せ */
+  justify-content: center; /* 垂直方向の中央寄せ */
+  /* その他の必要なスタイル */
+}
+
+@media screen and (min-width: 1800px) { /* 画面サイズに応じて調整 */
+  #cards, #cards2, #cards3 {
+    justify-content: center; /* 中央寄せ */
+      margin-left: 1rem; /* 小さい画面での左側のマージンを調整 */
+  }
+}
+
+.card .description p {
+  text-align: left; /* 左揃え */
+  /* その他の必要なスタイル */
+}
+
+.popup {
+  display: none;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* 背景を暗くする */
+  z-index: 100;
+  /* その他のスタイル */
+}
+
+.popup-image {
+  width: 80%;
+  height: 80%;
+  object-fit: contain; /* 画像の比率を保持 */
+}
+.overlay {
+  display: none;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 50;
+}
+
